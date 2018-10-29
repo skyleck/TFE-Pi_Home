@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+#Script d'installation et de config de SSH
+#
+
+
+
+#installer les packages
+#
+apt-get -y install openssh-server
+
+
+#démarrage du service
+#
+systemctl enable ssh
+
+
+#remplacement du port ssh par 1666
+#
+perl -i -p -e 's|#Port 22.*|Port 1666|g' /etc/ssh/sshd_config
+
+
+#ssh inaxessible en root + refus mot de passe
+#
+perl -i -p -e 's|#PermitRootLogin prohibit-password.*|PermitRootLogin no|g' /etc/ssh/sshd_config
+#perl -i -p -e 's|#PasswordAuthentification yes.*|PasswordAuthentification no|g' /etc/ssh/sshd_config
+
+
+#redémarrage du service ssh
+#
+systemctl restart ssh

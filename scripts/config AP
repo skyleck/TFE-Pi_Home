@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+
+#installation des services
+#
+apt-get install dnsmasq hostapd -y
+systemctl stop dnsmasq
+systemctl stop hostapd
+perl -i -p -e 's|#DAEMON_CONF="".*|DAEMON_CONF="/etc/hostapd/hostapd.conf"|g' /etc/default/hostapd
+
+#config de l'interface
+#
+echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
+echo "allow-hotplug wlan0" > /etc/network/interfaces.d/wlan0 
+echo "iface wlan0 inet static" >> /etc/network/interfaces.d/wlan0
+echo "address 192.168.2.1" >> /etc/network/interfaces.d/wlan0 
+echo "netmask 255.255.255.0" >> /etc/network/interfaces.d/wlan0
+echo "network 192.168.2.0" >> /etc/network/interfaces.d/wlan0 
+echo "broadcast 192.168.2.255" >> /etc/network/interfaces.d/wlan0 
+
+#configuration du DNS + range DHCP
+#
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bck
+echo "interface=wlan0 # Use interface wlan0" > /etc/dnsmasq.conf
+echo " listen-address=192.168.2.1 # Specify the address to listen on" >> /etc/dnsmasq.conf
+echo " bind-interfaces # Bind to the interface" >> /etc/dnsmasq.conf
+echo " server=8.8.8.8 # Use Google DNS" >> /etc/dnsmasq.conf
+echo " domain-needed # Don't forward short names" >> /etc/dnsmasq.conf
+echo " bogus-priv # Drop the non-routed address spaces." >> /etc/dnsmasq.conf
+echo " dhcp-range=192.168.2.2,192.168.2.20,255.255.255.0,24h" >> /etc/dnsmasq.conf 
+
+#config de l'AP
+#
+echo "interface=wlan0" >> /etc/hostapd/hostapd.conf
+echo "driver=nl80211" >> /etc/hostapd/hostapd.conf
+echo "ssid=PiHome" >> /etc/hostapd/hostapd.conf
+echo "hw_mode=g" >> /etc/hostapd/hostapd.conf
+echo "channel=7" >> /etc/hostapd/hostapd.conf
+echo "wmm_enabled=0" >> /etc/hostapd/hostapd.conf
+echo "macaddr_acl=0" >> /etc/hostapd/hostapd.conf
+echo "auth_algs=1" >> /etc/hostapd/hostapd.conf
+echo "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
+echo "wpa=2" >> /etc/hostapd/hostapd.conf
+echo "wpa_passphrase=Test123*" >> /etc/hostapd/hostapd.conf
+echo "wpa_key_mgmt=WPA-PSK" >> /etc/hostapd/hostapd.conf
+echo "wpa_pairwise=TKIP" >> /etc/hostapd/hostapd.conf
+echo "rsn_pairwise=CCMP" >> /etc/hostapd/hostapd.conf
+
+
+
+
+
+
+
+
+ 
+
+  
