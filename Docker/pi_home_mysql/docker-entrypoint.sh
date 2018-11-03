@@ -5,7 +5,8 @@ service mysql start
 
 mysql -u root --password=password -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('"$MYSQL_ROOT_PASSWORD"');"
 
-mysql -u root --password="$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE pi_home;" 
+mysql -u root --password="$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE pi_home;"
+mysql -u root --password="$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE pi_home_test;"
 
 for f in /docker_entrypoint-initdb.d/*; do
 	mysql -u root --password="$MYSQL_ROOT_PASSWORD" < $f
