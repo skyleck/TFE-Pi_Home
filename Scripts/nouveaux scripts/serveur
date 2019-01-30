@@ -1,0 +1,48 @@
+
+#! /usr/bin/python
+
+# coding: utf-8
+
+import socket
+import os
+import RPi.GPIO as GPIO
+
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket.bind(('', 12800))
+
+pinRelay = 4
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pinRelay,GPIO.OUT, initial=GPIO.LOW)
+try:
+        while True:
+                socket.listen(5)
+                client, address = socket.accept()
+                print "{} connected".format( address )
+
+                response = client.recv(255)
+                if response != "" and response == 'LampeOn':
+                        print "Lampe ON"
+                        GPIO.output(pinRelay, 1)
+                        print GPIO.input(pinRelay)
+
+                elif response != "" and response == 'LampeOff':
+                        print "Lampe OFF"
+                        GPIO.output(pinRelay, 0)
+                        print GPIO.input(pinRelay)
+
+                elif response != "" and response == 'LampeToggle':
+                        print "ON/OFF"
+                        GPIO.output(pinRelay, not GPIO.input(pinRelay))
+                        print GPIO.input(pinRelay)
+
+                else:
+                        print "error"
+except KeyboardInterrupt:
+        raise
+finally:
+        GPIO.cleanup()
+
+print "Close"
+client.close()
+stock.close()
+
