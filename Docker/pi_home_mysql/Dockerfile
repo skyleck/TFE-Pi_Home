@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get -y update && apt-get -y upgrade
 
 RUN echo "mysql-server mysql-server/root_password password password" \
 	| debconf-set-selections
