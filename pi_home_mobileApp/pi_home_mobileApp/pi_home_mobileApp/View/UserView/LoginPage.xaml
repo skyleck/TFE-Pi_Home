@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:pi_home_mobileApp.ViewModel.UserViewModel"
+             x:Class="pi_home_mobileApp.View.UserView.LoginPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Nickname}" />
+            <Entry Text="{Binding Password}" />
+            <Button Text="Login" Command="{Binding LoginCommandEvent}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

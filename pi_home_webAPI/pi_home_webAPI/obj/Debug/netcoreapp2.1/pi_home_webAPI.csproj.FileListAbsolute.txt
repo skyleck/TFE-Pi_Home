@@ -1,0 +1,14 @@
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\bin\Debug\netcoreapp2.1\pi_home_webAPI.deps.json
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\bin\Debug\netcoreapp2.1\pi_home_webAPI.runtimeconfig.json
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\bin\Debug\netcoreapp2.1\pi_home_webAPI.runtimeconfig.dev.json
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\bin\Debug\netcoreapp2.1\pi_home_webAPI.dll
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.csprojAssemblyReference.cache
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.csproj.CoreCompileInputs.cache
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.RazorAssemblyInfo.cache
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.RazorAssemblyInfo.cs
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.AssemblyInfoInputs.cache
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.AssemblyInfo.cs
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.RazorTargetAssemblyInfo.cache
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\bin\Debug\netcoreapp2.1\pi_home_webAPI.pdb
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.dll
+D:\Projects\TFE-Pi_Home\pi_home_webAPI\pi_home_webAPI\obj\Debug\netcoreapp2.1\pi_home_webAPI.pdb
