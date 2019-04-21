@@ -108,11 +108,11 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[12.0.2-beta1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.6.0.293080, )"
+              "version": "[3.4.0.1008975, )"
             }
           },
           "imports": [

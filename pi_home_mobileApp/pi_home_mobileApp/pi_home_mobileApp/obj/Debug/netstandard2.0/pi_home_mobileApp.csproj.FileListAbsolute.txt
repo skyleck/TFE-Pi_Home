@@ -1,26 +1,13 @@
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.deps.json
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.dll
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.csprojAssemblyReference.cache
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\View\UserView\LoginView.xaml.g.cs
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.csproj.CoreCompileInputs.cache
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.AssemblyInfoInputs.cache
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.AssemblyInfo.cs
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.pdb
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.dll
-C:\Users\Hempte Maxime\Documents\Mes Documents\Projets\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.pdb
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.deps.json
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.dll
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\bin\Debug\netstandard2.0\pi_home_mobileApp.pdb
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.csprojAssemblyReference.cache
-D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\App.xaml.g.cs
-D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.csproj.CoreCompileInputs.cache
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.AssemblyInfoInputs.cache
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.AssemblyInfo.cs
-D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.dll
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\pi_home_mobileApp.pdb
+D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\View\UserView\LoginPage.xaml.g.cs
+D:\Projects\TFE-Pi_Home\pi_home_mobileApp\pi_home_mobileApp\pi_home_mobileApp\obj\Debug\netstandard2.0\XamlC.stamp

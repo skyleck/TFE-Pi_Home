@@ -43,14 +43,13 @@ namespace pi_home_mobileApp.ViewModel.UserViewModel
         public Command LoginCommandEvent { get; set; }
         private async Task LoginEvent()
         {
-            var uri = new Uri("http://" + "localhost" + ":" + "63518" + "/api/users");
-
+            var uri = new Uri("http://" + "192.168.1.11" + ":" + "5001" + "/api/users");
+            d
             var response = await _client.GetAsync(uri);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 var value = JsonConvert.DeserializeObject(content);
-                
             }
         }
 

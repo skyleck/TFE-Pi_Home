@@ -1,12 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using pi_home_webAPI.Components.Users;
 using pi_home_webAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace pi_home_webAPI.Controllers
 {
@@ -23,15 +17,45 @@ namespace pi_home_webAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllUser()
+        public IActionResult GetUser(User user)
         {
-            return Ok(userComponentImpl.GetAllUser());
+            return Ok(userComponentImpl.GetUser(user));
         }
 
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
             return Ok(userComponentImpl.GetUser(id));
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult Login(User user)
+        {
+            return Ok(userComponentImpl.GetLogin(user));
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetUserByLogin(User user)
+        {
+            return Ok(userComponentImpl.GetUserByLogin(user.Login));
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetUserByFirstname(User user)
+        {
+            return Ok(userComponentImpl.GetUserByFirstname(user.Firstname));
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetUserByLastname(User user)
+        {
+            return Ok(userComponentImpl.GetUserByLastname(user.Lastname));
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetUserByName(User user)
+        {
+            return Ok(userComponentImpl.GetUserByName(user.Firstname, user.Lastname));
         }
 
         [HttpPost]
@@ -52,7 +76,7 @@ namespace pi_home_webAPI.Controllers
         public IActionResult DeleteUser(int id)
         {
             userComponentImpl.DeleteUser(id);
-            return Ok(id);
+            return Ok("User deleted");
         }
     }
 }

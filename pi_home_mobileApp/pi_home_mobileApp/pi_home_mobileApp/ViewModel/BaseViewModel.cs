@@ -75,7 +75,7 @@ namespace pi_home_mobileApp.ViewModel
         {
             Title = title;
             _client = new HttpClient();
-            IP = "192.168.1.61";
+            IP = "192.168.1.8";
             PORT = "3000";
         }
 

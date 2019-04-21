@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.1": {
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/12.0.2-beta1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -354,8 +354,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.293080"
+          "Newtonsoft.Json": "12.0.2-beta1",
+          "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
           "bin/placeholder/pi_home_mobileApp.dll": {}
@@ -367,10 +367,10 @@
     }
   },
   "libraries": {
-    "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+    "Newtonsoft.Json/12.0.2-beta1": {
+      "sha512": "N60ieuCbsKGsyyspN8urq8tmNT9RitCbPoZBuyD2NKHgQ9O42kGVuQJ+Bmr8RUb7xbpKLTvVAu2vX562Q/G/oQ==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.1",
+      "path": "newtonsoft.json/12.0.2-beta1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -402,7 +402,7 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.12.0.2-beta1.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -912,17 +912,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Passage à une version antérieure du package détecté : Xamarin.Forms de 3.6.0.293080 à 3.4.0.1008975. Référencez le package directement à partir du projet pour sélectionner une version différente. \r\n pi_home_mobileApp.Android -> pi_home_mobileApp -> Xamarin.Forms (>= 3.6.0.293080) \r\n pi_home_mobileApp.Android -> Xamarin.Forms (>= 3.4.0.1008975)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "MonoAndroid,Version=v8.1"
-      ]
-    }
-  ]
+  }
 }

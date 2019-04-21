@@ -36,6 +36,36 @@ namespace pi_home_webAPI.Components.Users
             return userDao.GetUser(id);
         }
 
+        public User GetUser(User user)
+        {
+            return userDao.GetUser(user);
+        }
+
+        public User GetLogin(User user)
+        {
+            return userDao.GetLogin(user.Login, user.Password);
+        }
+
+        public User GetUserByLogin(string login)
+        {
+            return userDao.GetUserByLogin(login);
+        }
+
+        public User GetUserByFirstname(string firstname)
+        {
+            return userDao.GetUserByFirstname(firstname);
+        }
+
+        public User GetUserByLastname(string lastname)
+        {
+            return userDao.GetUserByLastname(lastname);
+        }
+
+        public User GetUserByName(string firstname, string lastname)
+        {
+            return userDao.GetUserByName(firstname, lastname);
+        }
+
         public void UpdateUser(User user, int id)
         {
             userDao.UpdateUser(user, id);
