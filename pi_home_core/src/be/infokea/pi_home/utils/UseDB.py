@@ -44,16 +44,8 @@ class UseDB:
         self.cursor.execute(sql)
         self.db.commit()
 
-    def select(self, table,columnsRef, valuesRef):
-        sql = "SELECT * FROM " + table + " where "
-        nbrColumns = len(columnsRef)
-        i = 0
-        while(i < nbrColumns):
-            if(i != 0):
-                sql += " AND "
-            sql = sql + columnsRef[i] + "='" + valuesRef[i] + "'"
-            i += 1
-        sql += ";"
+    def select(self, table, id):
+        sql = "SELECT * FROM " + table + " where id = " + str(id)
         self.cursor.execute(sql)
         results = self.cursor.fetchall()
         return results
@@ -64,27 +56,23 @@ class UseDB:
         results = self.cursor.fetchall()
         return results
 
-    def update(self,table,column,newValue,columnsRef,valuesRef):
-        sql = "UPDATE " + table + " SET " + column + "='" + newValue + "' WHERE "
+    def update(self,table,columns,newValues,id):
+        sql = "UPDATE " + table + " SET " 
         i = 0
-        nbrColumns = len(columnsRef)
+        nbrColumns = len(columns)
         while(i < nbrColumns):
             if(i != 0):
-                sql += " AND "
-            sql = sql + columnsRef[i] + "='" + valuesRef[i] + "'"
+                sql += " , "
+            sql = sql + columns[i] + " = '" + newValues[i] + "'"
             i += 1
-        self.cursor.execute(sql)
-
-    def delete(self,table,columnsRef,valuesRef):
-        sql = "DELETE FROM " + table + " WHERE "
-        i = 0
-        nbrColumns = len(columnsRef)
-        while(i < nbrColumns):
-            if(i != 0):
-                sql += " AND "
-            sql = sql + columnsRef[i] + "='" + valuesRef[i] + "'"
-            i += 1
+        sql = sql + " WHERE id = "  + str(id)
         print(sql)
+        self.cursor.execute(sql)
+        self.db.commit()
+        return sql
+
+    def delete(self,table,id):
+        sql = "DELETE FROM " + table + " WHERE id  = " + str(id)
         self.cursor.execute(sql)
         self.db.commit()
 

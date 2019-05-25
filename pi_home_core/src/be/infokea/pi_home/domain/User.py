@@ -1,7 +1,8 @@
 
 class User(object):
     
-    def __init__(self,firstname,lastname,password):
+    def __init__(self,login,firstname,lastname,password):
+        self.__login = login
         self.__firstname = firstname
         self.__lastname = lastname
         self.__password = password
@@ -33,3 +34,17 @@ class User(object):
 
     def setPassword(self,password):
         self.__password = password
+
+    def getLogin(self):
+        return self.__login
+
+    def setLogin(self,login):
+        return self.__login
+
+    def jsonFormat(self):
+        return {
+                'login': self.__login,
+                'firstname': self.__firstname,
+                'lastname': self.__lastname,
+                'password': self.__password
+        }
