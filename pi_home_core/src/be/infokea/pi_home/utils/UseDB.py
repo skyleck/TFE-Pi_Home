@@ -71,7 +71,7 @@ class UseDB:
         self.db.commit()
         return sql
 
-    def delete(self,table,id):
+    def delete(self,id):
         sql = "DELETE FROM " + table + " WHERE id  = " + str(id)
         self.cursor.execute(sql)
         self.db.commit()

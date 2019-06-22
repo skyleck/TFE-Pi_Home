@@ -1,11 +1,13 @@
 
 class User(object):
     
-    def __init__(self,login,firstname,lastname,password):
+    def __init__(self,id,login,firstname,lastname,password,authorization):
+        self.__id = id
         self.__login = login
         self.__firstname = firstname
         self.__lastname = lastname
         self.__password = password
+        self.__authorization = authorization
 
     def __eq__(self,other):
         testFirstname = self.__firstname == other.getFirstname()
@@ -16,6 +18,9 @@ class User(object):
         testFirstname = self.__firstname != other.getFirstname()
         testLastname = self.__lastname != other.getLastname()
         return testFirstname or testLastname
+
+    def getId(self):
+        return self.__id
 
     def getFirstname(self):
         return self.__firstname
@@ -39,12 +44,20 @@ class User(object):
         return self.__login
 
     def setLogin(self,login):
-        return self.__login
+        self.__login = login
+
+    def getAuthorization(self):
+        return self.__authorization
+
+    def setAuthorization(self):
+        self.__authorization = authorization
 
     def jsonFormat(self):
         return {
+                'id': self.__id,
                 'login': self.__login,
                 'firstname': self.__firstname,
                 'lastname': self.__lastname,
-                'password': self.__password
+                'password': self.__password,
+                'authorization': self.__authorization
         }
