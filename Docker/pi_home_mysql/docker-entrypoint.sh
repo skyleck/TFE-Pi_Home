@@ -9,6 +9,7 @@ mysql -u root --password="test" -e "CREATE DATABASE pi_home;"
 mysql -u root --password="test" -e "CREATE DATABASE pi_home_test;"
 
 for f in /docker_entrypoint-initdb.d/*; do
+	sleep 5
 	mysql -u root --password="test" < $f
 done
 
