@@ -29,5 +29,6 @@ class LoginRessource(Resource):
         return{
             'message': 'Logged in as ' + str(user[0].getLogin()),
             'access_token':access_token,
-            'refresh_token':refresh_token
+            'refresh_token':refresh_token,
+            'id': str(user[0].getId())
         }

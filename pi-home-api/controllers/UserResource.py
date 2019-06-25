@@ -78,8 +78,6 @@ class UserResource(Resource):
         content = request.get_json()
         if curent_user[0].getAuthorization() == 2 or curent_user[0].getId() == int(content["id"]):
             inputVoid = []
-            if content["login"] == "":
-                inputVoid.append("login")
             if content["firstname"] == "":
                 inputVoid.append("firstname")
             if content["lastname"] == "":
@@ -98,9 +96,9 @@ class UserResource(Resource):
                 response = jsonify({'msg': 'Passwords not equals', 'column': inputVoid})
                 response.status_code = 400
                 return response
-                user = User(content["id"],content["login"],content["firstname"],content["lastname"],content["password"],content["authorization"])
-                self.userImpl.updateUser(content["id"],user)
-                return "User updated"
+            user = User(content["id"],content["login"],content["firstname"],content["lastname"],content["password"],content["authorization"])
+            self.userImpl.updateUser(content["id"],user)
+            return "User updated"
         else:
             response = jsonify({'msg': 'Not authorize'})
             response.status_code = 400
