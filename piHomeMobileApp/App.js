@@ -3,6 +3,7 @@ import ListUsers from './component/ListUsers'
 import Registration from './component/Registration'
 import UserPage from './component/UserPage'
 import Update from './component/Update'
+import ListModules from './component/ListModules'
 
 import {
   createStackNavigator,
@@ -14,8 +15,10 @@ const DrawerStack = createDrawerNavigator({
   Login: { screen: Login, navigationOptions: {
     drawerLabel: () => null
   }},
+  //Modules: {screen: Modules},
   ListUsers: { screen: ListUsers },
   MyProfil: { screen: UserPage},
+  ListModules: {screen: ListModules},
   Registration : { screen: Registration, navigationOptions: {
     drawerLabel: () => null
   }},
