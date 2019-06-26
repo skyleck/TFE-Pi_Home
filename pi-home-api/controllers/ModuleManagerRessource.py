@@ -46,4 +46,10 @@ class ModuleManagerRessource(Resource):
         self.moduleImpl.insert(module)
         return "Module added"
 
+    def put(self):
+        content = request.get_json()
+        module = Module(content["id"],content["name"],content["ip"],content["state"])
+        self.moduleImpl.update(content["id"],module)
+        return "Module updated"
+        
     

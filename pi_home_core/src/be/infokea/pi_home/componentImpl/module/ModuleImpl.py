@@ -10,9 +10,9 @@ class ModuleImpl():
         self.database = "pi_home"
     
     def insert(self,module):
-        sql = "INSERT INTO module (name,ip) VALUES ('"+module.getName() + "','" \
-                                                + module.getIp() + "," \
-                                                + module.getState() + ")"
+        sql = "INSERT INTO module (name,ip,state) VALUES ('"+module.getName() + "','" \
+                                                + module.getIp() + "','" \
+                                                + str(module.getState()) + "')"
         db = pymysql.connect(self.ip,self.user,self.password,self.database)
         try:
             cursor = db.cursor()
@@ -73,4 +73,17 @@ class ModuleImpl():
                 modules.append(Module(id,name,ip,state))
             return modules
         finally:
-            db.close()  
+            db.close()
+
+    def update(self,id,module):
+        sql = "UPDATE module SET name = '" + module.getName() + "'" \
+                                    + " , ip = '" + module.getIp() + "'" \
+                                    + " , state = '" + str(module.getState()) \
+                                    + "' WHERE id = " + str(id)
+        db = pymysql.connect(self.ip,self.user,self.password,self.database)
+        try:
+            cursor = db.cursor()
+            cursor.execute(sql)
+            db.commit()
+        finally:
+            db.close()

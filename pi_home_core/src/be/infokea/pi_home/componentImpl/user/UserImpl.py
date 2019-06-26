@@ -145,5 +145,3 @@ class UserImpl():
         finally:
             db.close()
         
-    def close(self):
-        self.useDb.close()
