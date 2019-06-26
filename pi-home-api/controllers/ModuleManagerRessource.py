@@ -52,4 +52,7 @@ class ModuleManagerRessource(Resource):
         self.moduleImpl.update(content["id"],module)
         return "Module updated"
         
+    def delete(self,id):
+        self.moduleImpl.delete(id)
+        return "Module deleted"
     

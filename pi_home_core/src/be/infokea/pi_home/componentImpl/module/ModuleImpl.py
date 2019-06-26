@@ -87,3 +87,13 @@ class ModuleImpl():
             db.commit()
         finally:
             db.close()
+
+    def delete(self,id):
+        sql = "DELETE FROM module where id = " + str(id)
+        db = pymysql.connect(self.ip,self.user,self.password,self.database)
+        try:
+            cursor = db.cursor()
+            cursor.execute(sql)
+            db.commit()
+        finally:
+            db.close()
