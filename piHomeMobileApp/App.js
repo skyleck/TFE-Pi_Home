@@ -17,10 +17,10 @@ const DrawerStack = createDrawerNavigator({
     drawerLabel: () => null
   }},
   //Modules: {screen: Modules},
-  ListUsers: { screen: ListUsers },
-  MyProfil: { screen: UserPage},
-  ListModules: {screen: ListModules},
-  NewModules: {screen: NewModules},
+  ListUsers: { screen: ListUsers, navigationOptions: {drawerLabel:"Users" }},
+  MyProfil: { screen: UserPage, navigationOptions: {drawerLabel:"My profil" }},
+  ListModules: {screen: ListModules, navigationOptions: {drawerLabel:"Modules" }},
+  NewModules: {screen: NewModules, navigationOptions: {drawerLabel:"New Modules" }},
   Registration : { screen: Registration, navigationOptions: {
     drawerLabel: () => null
   }},
