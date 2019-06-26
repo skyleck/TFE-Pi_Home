@@ -23,7 +23,7 @@ class UserImpl():
             cursor.execute(sql)
             results = cursor.fetchall()
             if(len(results) == 0):
-                return None;
+                return None
             else:
                 users = []
                 for row in results:

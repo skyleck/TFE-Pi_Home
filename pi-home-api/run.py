@@ -14,6 +14,8 @@ from flask_cors import CORS, cross_origin
 
 from controllers.LoginRessource import LoginRessource
 from controllers.UserResource import UserResource
+from controllers.ModuleManagerRessource import ModuleManagerRessource
+from controllers.ModuleByNameRessource import ModuleByNameRessource
 
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
@@ -24,6 +26,8 @@ jwt = JWTManager(app)
 
 api.add_resource(LoginRessource, '/api/login')
 api.add_resource(UserResource, "/api/user", "/api/user/<id>")
+api.add_resource(ModuleManagerRessource, "/api/module","/api/module/<id>")
+api.add_resource(ModuleByNameRessource, "/api/moduleByName/<name>")
 
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5001)

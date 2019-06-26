@@ -49,7 +49,7 @@ class User(object):
     def getAuthorization(self):
         return self.__authorization
 
-    def setAuthorization(self):
+    def setAuthorization(self,authorization):
         self.__authorization = authorization
 
     def jsonFormat(self):
