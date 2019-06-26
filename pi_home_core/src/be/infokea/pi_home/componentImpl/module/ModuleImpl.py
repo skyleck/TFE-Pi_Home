@@ -11,7 +11,8 @@ class ModuleImpl():
     
     def insert(self,module):
         sql = "INSERT INTO module (name,ip) VALUES ('"+module.getName() + "','" \
-                                                + module.getIp() + "')"
+                                                + module.getIp() + "," \
+                                                + module.getState() + ")"
         db = pymysql.connect(self.ip,self.user,self.password,self.database)
         try:
             cursor = db.cursor()
@@ -32,7 +33,8 @@ class ModuleImpl():
                 id = row[0]
                 name = row[1]
                 ip = row[2]
-                modules.append(Module(id,name,ip))
+                state = row[3]
+                modules.append(Module(id,name,ip,state))
             return modules
         finally:
             db.close()
@@ -49,7 +51,8 @@ class ModuleImpl():
                 id = row[0]
                 name = row[1]
                 ip = row[2]
-                modules.append(Module(id,name,ip))
+                state = row[3]
+                modules.append(Module(id,name,ip,state))
             return modules
         finally:
             db.close()
@@ -66,7 +69,8 @@ class ModuleImpl():
                 id = row[0]
                 name = row[1]
                 ip = row[2]
-                modules.append(Module(id,name,ip))
+                state = row[3]
+                modules.append(Module(id,name,ip,state))
             return modules
         finally:
-            db.close()        
+            db.close()  

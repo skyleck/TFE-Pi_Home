@@ -25,8 +25,8 @@ class ModuleManagerRessource(Resource):
         curent_user = self.userImpl.select(get_jwt_identity())
         if id is None:
             if(curent_user[0].getAuthorization() == 2):
-                modeles = self.moduleImpl.selectAll()
-                return jsonify([e.jsonFormat() for e in modeles])
+                modules = self.moduleImpl.selectAll()
+                return jsonify([e.jsonFormat() for e in modules])
             else:
                 response = jsonify({'msg': 'Not authorize'})
                 response.status_code = 400
@@ -42,7 +42,7 @@ class ModuleManagerRessource(Resource):
 
     def post(self):
         content = request.get_json()
-        module = Module(0,"None",content["ip"])
+        module = Module(0,"None",content["ip"],0)
         self.moduleImpl.insert(module)
         return "Module added"
 
