@@ -39,6 +39,24 @@ class ModuleImpl():
         finally:
             db.close()
 
+    def selectNotNone(self):
+        sql = "SELECT * FROM module where name != 'None'"
+        db = pymysql.connect(self.ip,self.user,self.password,self.database)
+        try:
+            cursor = db.cursor()
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            modules = []
+            for row in results:
+                id = row[0]
+                name = row[1]
+                ip = row[2]
+                state = row[3]
+                modules.append(Module(id,name,ip,state))
+            return modules
+        finally:
+            db.close()
+
     def selectAll(self):
         sql = "SELECT * FROM module"
         db = pymysql.connect(self.ip,self.user,self.password,self.database)
@@ -64,14 +82,17 @@ class ModuleImpl():
             cursor = db.cursor()
             cursor.execute(sql)
             results = cursor.fetchall()
-            modules = []
-            for row in results:
-                id = row[0]
-                name = row[1]
-                ip = row[2]
-                state = row[3]
-                modules.append(Module(id,name,ip,state))
-            return modules
+            if(len(results) == 0):
+                return None
+            else:
+                modules = []
+                for row in results:
+                    id = row[0]
+                    name = row[1]
+                    ip = row[2]
+                    state = row[3]
+                    modules.append(Module(id,name,ip,state))
+                return modules
         finally:
             db.close()
 

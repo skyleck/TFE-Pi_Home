@@ -25,7 +25,7 @@ class ModuleManagerRessource(Resource):
         curent_user = self.userImpl.select(get_jwt_identity())
         if id is None:
             if(curent_user[0].getAuthorization() == 2):
-                modules = self.moduleImpl.selectAll()
+                modules = self.moduleImpl.selectNotNone()
                 return jsonify([e.jsonFormat() for e in modules])
             else:
                 response = jsonify({'msg': 'Not authorize'})
@@ -48,6 +48,16 @@ class ModuleManagerRessource(Resource):
 
     def put(self):
         content = request.get_json()
+        if(content["name"] != "None"):
+            checkName = self.moduleImpl.selectByName(content["name"])
+            if checkName is not None:
+                response = jsonify({'msg': 'Name ' + content["name"] + ' already exist !'})
+                response.status_code = 400
+                return response
+        else:
+            response = jsonify({'msg': 'None is not a valid name'})
+            response.status_code = 400
+            return response 
         module = Module(content["id"],content["name"],content["ip"],content["state"])
         self.moduleImpl.update(content["id"],module)
         return "Module updated"
