@@ -22,4 +22,6 @@ class ModuleByNameRessource(Resource):
 
     def get(self, name):
         modules = self.moduleImpl.selectByName(name)
+        if(modules is None):
+            return []
         return jsonify([e.jsonFormat() for e in modules])

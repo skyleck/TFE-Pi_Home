@@ -6,13 +6,13 @@ import hashlib
 class UserImpl():
 
     def __init__(self):
-        self.ip = "192.168.1.155"
+        self.ip = "192.168.50.1"
         self.user = "root"
         self.password = "test"
         self.database = "pi_home"
 
     def getDBCursor(self):
-        db = pymysql.connect("192.168.1.155","root","test","pi_home")
+        db = pymysql.connect("192.168.50.1","root","test","pi_home")
         cursor = db.cursor()
 
     def login(self,login,password):

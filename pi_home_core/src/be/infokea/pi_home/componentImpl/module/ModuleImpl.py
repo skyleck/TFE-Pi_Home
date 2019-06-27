@@ -4,7 +4,7 @@ import pymysql
 class ModuleImpl():
 
     def __init__(self):
-        self.ip = "192.168.1.155"
+        self.ip = "192.168.50.1"
         self.user = "root"
         self.password = "test"
         self.database = "pi_home"

@@ -1,3 +1,4 @@
+
 from flask import jsonify
 from flask import request
 from flask_restful import Resource
@@ -6,6 +7,7 @@ from flask_jwt_extended import jwt_required,get_jwt_identity
 from flask_jwt import current_identity
 
 import sys
+import os
 sys.path.append("pi_home_core")
 
 from src.be.infokea.pi_home.componentImpl.module.ModuleImpl import ModuleImpl
@@ -38,7 +40,7 @@ class ModuleManagerRessource(Resource):
             else:
                 response = jsonify({'msg': 'Not authorize'})
                 response.status_code = 400
-                return response 
+                return response
 
     def post(self):
         content = request.get_json()
@@ -48,16 +50,27 @@ class ModuleManagerRessource(Resource):
 
     def put(self):
         content = request.get_json()
-        if(content["name"] != "None"):
-            checkName = self.moduleImpl.selectByName(content["name"])
-            if checkName is not None:
-                response = jsonify({'msg': 'Name ' + content["name"] + ' already exist !'})
+        if("action" in content and content["action"] == "changeState"):
+            if(content["state"] == 1):
+                value = "On"
+            else:
+                value = "Off"
+            command = "ServerCommandPublish " + value + " " + content["name"]
+            os.system(command)
+        else:
+            if(content["name"] != "None"):
+                checkName = self.moduleImpl.selectByName(content["name"])
+                if checkName is not None:
+                    response = jsonify({'msg': 'Name ' + content["name"] + ' already exist !'})
+                    response.status_code = 400
+                    return response
+                command = "ServerCommandPublishConnected " + content["ip"] + " " + content["name"]
+                os.system(command)
+            else:
+                response = jsonify({'msg': 'None is not a valid name'})
                 response.status_code = 400
                 return response
-        else:
-            response = jsonify({'msg': 'None is not a valid name'})
-            response.status_code = 400
-            return response 
+
         module = Module(content["id"],content["name"],content["ip"],content["state"])
         self.moduleImpl.update(content["id"],module)
         return "Module updated"

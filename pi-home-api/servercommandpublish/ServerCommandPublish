@@ -1,0 +1,9 @@
+#!/usr/bin/python
+import sys
+import os
+
+message = sys.argv[1]
+topic = sys.argv[2]
+
+command = "mosquitto_pub -h localhost -m " + message + " -t second/connected/" + topic
+os.system(command)
